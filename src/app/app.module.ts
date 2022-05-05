@@ -12,6 +12,7 @@ import { UsuariosComponent } from './pages/usuarios/usuarios.component';
 import { ArticulosComponent } from './pages/articulos/articulos.component';
 import { NavbarComponent } from './shared/navbar/navbar.component';
 import { PedidosComponent } from './pages/pedidos/pedidos.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PedidosComponent } from './pages/pedidos/pedidos.component';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
