@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -12,10 +12,19 @@ export class ArticulosComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.http.get('https://localhost:7286/api/Articulos/ObtenerStockArticulos').subscribe(r => {
-      debugger;
-    })
 
+
+  }
+
+  ConsultarArticulos() {
+    const httpOptions = {
+      headers: new HttpHeaders({ 
+        "Access-Control-Allow-Origin":"*"
+      })
+    };
+    this.http.get('https://localhost:7286/api/Articulos/ObtenerStockArticulos',httpOptions).subscribe(r => {
+      console.log(r);
+    })
   }
 
 }
